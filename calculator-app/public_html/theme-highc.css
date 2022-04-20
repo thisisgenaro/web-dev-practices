@@ -1,0 +1,79 @@
+/* HIGH CONTRAST THEME */
+
+:root{
+    
+    /* COMMON */
+    --BodyBG: hsl(268, 75%, 9%);
+    --FontColor: hsl(52, 100%, 62%);
+
+    /* SCREEN */
+    --ScreenBG: hsl(268, 71%, 12%);
+
+    /* KEYPAD */
+    --KeypadBG: hsl(268, 71%, 12%);
+    --KeyBG: hsl(281, 89%, 26%);
+    --KeyShadow: hsl(285, 91%, 52%);
+    --KeyFontColor: hsl(52, 100%, 62%);
+
+    --specialKeyBG: hsl(268, 47%, 21%);
+    --specialKeyShadow: hsl(290, 70%, 36%);
+    --specialKeyFontColor: hsl(0, 0%, 100%);
+
+    --submitKeyBG: hsl(176, 100%, 44%);
+    --submitKeyShadow: hsl(177, 92%, 70%);
+    --submitKeyFontColor: hsl(198, 20%, 13%);
+
+}
+
+
+
+* body{
+    background-color: var(--BodyBG);
+    color: var(--FontColor);
+}
+
+.screen{
+    background-color: var(--ScreenBG);
+    color: var(--FontColor);
+}
+
+.keypad{
+    background-color: var(--KeypadBG);
+}
+
+.key{
+    background-color: var(--KeyBG);
+    box-shadow: 0px 1px var(--KeyShadow);
+    border-color: var(--KeyBG);
+    color: var(--KeyFontColor);
+}
+
+.special{
+    background-color: var(--specialKeyBG);
+    box-shadow: 0px 1px var(--specialKeyShadow);
+    border-color: var(--specialKeyBG);
+    color: var(--specialKeyFontColor);
+}
+
+.submit{
+    background-color: var(--submitKeyBG);
+    box-shadow: 0px 1px var(--submitKeyShadow);
+    border-color: var(--submitKeyBG);
+    color: var(--specialKeyFontColor);
+}
+
+.theme-selector-handle{
+    background-color: var(--KeypadBG);
+}
+
+.theme-selector-handle::-webkit-slider-thumb{
+    background-color: var(--submitKeyBG);
+}
+
+.theme-selector-handle::-moz-range-thumb{
+    background-color: var(--submitKeyBG);
+}
+
+#screen-operator{
+    color: var(--submitKeyBG);
+}

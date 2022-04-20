@@ -1,0 +1,20 @@
+/* CSS MAIN */
+
+img{
+	width: 300px;
+	height: auto;
+}
+
+.container h1 {
+	font-size: 30px;
+	color: blue;
+}
+
+.container {
+	font-family: verdana;
+	background-color: #12345678;
+}
+
+.recipe {
+	font-family: helvetica;
+}
