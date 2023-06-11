@@ -23,9 +23,9 @@ body{
 }
 
 img{
-    width: 275px;
-    height: 275px;
-    border-radius: 15px;
+    width: 270px;
+    height: 270px;
+    border-radius: 12px;
 }
 
 #main{
@@ -36,7 +36,7 @@ img{
     justify-content: center;
     background-color: white;
     padding: 15px;
-    border-radius: 15px;
+    border-radius: 18px;
     box-sizing: border-box;
 }
 
