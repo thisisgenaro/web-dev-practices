@@ -8,13 +8,14 @@ function importJsonData()
     .then(response => {
         return response.json();
     })
-    .then(data => logJsonData(data)) ;
+    .then(data => logJsonData(data)
+    );
 
 }
 
 function logJsonData(data)
 {   
-    return data.Experience;
+    return data;
     console.log(data.Experience)
         data.Experience.forEach(writeExperience);
         data.Education.forEach(writeEducation);
