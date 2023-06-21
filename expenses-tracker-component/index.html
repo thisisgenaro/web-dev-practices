@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./sources/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./sources/css/style.css">
+  
+  <title>Frontend Mentor | Expenses chart component</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="main container">
+
+    <div class="balance container">
+      <div class="head container">
+        <p>My balance</p>
+        <h2>$921.48</h2>
+      </div>
+      <img src="sources/images/logo.svg" alt="logo">
+    </div>
+
+    <div class="data container">
+      <h2>Spending - Last 7 days</h2>
+
+      <div class="chart-area">
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+        <script>
+        var xValues = ["mon", "tue", "wed", "thu", "fri","sat","sun"];
+        var yValues = [17.45, 34.91, 52.36, 31.07, 23.39, 43.28, 25.48];
+        var barColors = "hsl(10, 79%, 65%)";
+  
+        new Chart("myChart", {
+          type: "bar",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            legend: {display: false},
+            title: {display: false,}
+          }
+        });
+        </script>  
+      </div>
+
+      <hr>
+      
+      <div class="footer-summary total">
+        <p>this month</p>
+        <h1>$478.33</h1>
+      </div>
+    
+      <div class="footer-summary percent">
+        <h5>+2.4%</h5>
+        <p>from last month</p>
+      </div>
+      
+    </div>
+
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
