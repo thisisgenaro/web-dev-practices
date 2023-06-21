@@ -13,6 +13,7 @@ function importJsonData()
 
 function logJsonData(data)
 {   
+    console.log(data.experience);
         data.Experience.forEach(writeExperience);
         data.Education.forEach(writeEducation);
         data.Skills.forEach(writeSkills);
@@ -53,7 +54,6 @@ function writeExperience(experience)
     
    */
 
-    console.log(experience);
     var startdate = experience.startdate;
     var enddate = experience.enddate;
     var timespan = startdate + " - " + enddate
