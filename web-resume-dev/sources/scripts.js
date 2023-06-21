@@ -53,7 +53,7 @@ function writeExperience(experience)
     
    */
 
-
+    console.log(experience);
     var startdate = experience.startdate;
     var enddate = experience.enddate;
     var timespan = startdate + " - " + enddate
