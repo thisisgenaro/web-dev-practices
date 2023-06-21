@@ -35,6 +35,25 @@ function writeExperience(experience)
     
    */
 
+    /* -----    Expected Output - Example v3
+
+            <li class="experience item">
+                <div class="content">
+                    <h2>DPWorld Caucedo</h2><br>
+                        <ul>
+                        <em>LEAD IT INFRASTRUCTURE ENGINEER</em><span class="timespan">2021 - Current</span><br>
+                        <p>Responsible for planning, managing and implementing IT Infrastructure resources and their usage through all the port and logistics solutions offered in the terminal, including networks, servers, high availability, site redundancy, UPS, cloud, and more.<p>
+                        </ul>
+                        <ul>
+                        <em>LEAD IT INFRASTRUCTURE ENGINEER</em><span class="timespan">2021 - Current</span><br>
+                        <p>Responsible for planning, managing and implementing IT Infrastructure resources and their usage through all the port and logistics solutions offered in the terminal, including networks, servers, high availability, site redundancy, UPS, cloud, and more.<p>
+                        </ul>
+                </div>
+            </li>
+    
+   */
+
+
     var startdate = experience.startdate;
     var enddate = experience.enddate;
     var timespan = startdate + " - " + enddate
