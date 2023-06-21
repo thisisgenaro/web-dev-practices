@@ -1,9 +1,10 @@
 var dataJson = "sources/main-data.json"
+var AllData
 
 function importJsonData()
 {
 
-    fetch(dataJson)
+    AllData = fetch(dataJson)
     .then(response => {
         return response.json();
     })
