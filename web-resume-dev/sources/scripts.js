@@ -13,6 +13,7 @@ function importJsonData()
 
 function logJsonData(data)
 {   
+    return data.Experience;
     console.log(data.Experience)
         data.Experience.forEach(writeExperience);
         data.Education.forEach(writeEducation);
