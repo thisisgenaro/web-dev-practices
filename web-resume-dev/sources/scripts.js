@@ -20,13 +20,11 @@ function logJsonData(data)
     */
    
     data.Experience.forEach(writeExperience);
-    
-    /*
     data.Education.forEach(writeEducation);
     data.Skills.forEach(writeSkills);
     data.Personality.forEach(writeTreats);
     data.Social.forEach(writeSocial);
-    */
+    
 }
 
 function writeExperience(experience)
