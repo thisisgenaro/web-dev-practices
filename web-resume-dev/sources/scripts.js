@@ -14,14 +14,18 @@ function importJsonData()
 
 function logJsonData(data)
 {   
-    /*console.log(data.Experience);
-    console.log(Object.keys(data.Experience[0]));*/
     /*
-        data.Experience.forEach(writeExperience);
-        data.Education.forEach(writeEducation);
-        data.Skills.forEach(writeSkills);
-        data.Personality.forEach(writeTreats);
-        data.Social.forEach(writeSocial);
+    console.log(data.Experience);
+    console.log(Object.keys(data.Experience[0]));
+    */
+   
+    data.Experience.forEach(writeExperience);
+    
+    /*
+    data.Education.forEach(writeEducation);
+    data.Skills.forEach(writeSkills);
+    data.Personality.forEach(writeTreats);
+    data.Social.forEach(writeSocial);
     */
 }
 
