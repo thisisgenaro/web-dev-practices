@@ -128,6 +128,8 @@ function writeExperience(experience)
 
     */
 
+    console.log(companies.forEach(displayData));
+
     HTMLOutput.appendChild(companies.forEach(displayData));
     document.getElementById("work-experience").appendChild(HTMLOutput);
 
