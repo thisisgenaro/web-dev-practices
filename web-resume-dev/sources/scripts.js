@@ -117,8 +117,8 @@ function writeExperience(experience)
 
         console.log(content);
 
-        return content
-    
+        HTMLOutput.appendChild(content);
+        
     }
 
     companies.forEach(displayData);
@@ -133,8 +133,6 @@ function writeExperience(experience)
     var description = experience.description;
 
     */
-   
-    HTMLOutput.appendChild(companies.forEach(displayData));
     document.getElementById("work-experience").appendChild(HTMLOutput);
 
 }
