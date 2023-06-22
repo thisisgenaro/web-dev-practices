@@ -88,37 +88,38 @@ function writeExperience(experience)
         content.appendChild(document.createElement('br'));
         var list = content.appendChild(document.createElement('ul'));
 
-        companyExperience.forEach(exp =>
-            {
-                var startdate = exp.startdate;
-                var enddate = exp.enddate;
-                var timespan = startdate + " - " + enddate
-                var role = exp.role;
-                var description = exp.description;
-
-                var companyListElement = document.createElement('li');
-
-                var roleHTML = document.createElement('em');
-                roleHTML.innerText = role;
-                companyListElement.appendChild(roleHTML);
-
-                var timespanHTML = document.createElement('span');
-                timespanHTML.innerText = timespan;
-                companyListElement.appendChild(timespanHTML);
-                companyListElement.appendChild(document.createElement('br'));
-                companyListElement.innerHTML += description;
-                companyListElement.appendChild(document.createElement('br'));
-
-                list.appendChild(companyListElement);
-
-            })
-
-            content.appendChild(list);
-
+        companyExperience.forEach(addExperience);
+        content.appendChild(list);
         console.log(content);
 
         HTMLOutput.appendChild(content);
+
+    }
+
+    function addExperience(exp)
+    {
         
+        var startdate = exp.startdate;
+        var enddate = exp.enddate;
+        var timespan = startdate + " - " + enddate
+        var role = exp.role;
+        var description = exp.description;
+
+        var companyListElement = document.createElement('li');
+
+        var roleHTML = document.createElement('em');
+        roleHTML.innerText = role;
+        companyListElement.appendChild(roleHTML);
+
+        var timespanHTML = document.createElement('span');
+        timespanHTML.innerText = timespan;
+        companyListElement.appendChild(timespanHTML);
+        companyListElement.appendChild(document.createElement('br'));
+        companyListElement.innerHTML += description;
+        companyListElement.appendChild(document.createElement('br'));
+
+        list.appendChild(companyListElement);
+
     }
 
     companies.forEach(displayData);
