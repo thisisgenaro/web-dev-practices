@@ -14,8 +14,8 @@ function importJsonData()
 
 function logJsonData(data)
 {   
-    console.log(data.Experience);
-    /*console.log(Object.keys(data.Experience[0]));*/
+    /*console.log(data.Experience);
+    console.log(Object.keys(data.Experience[0]));*/
     /*
         data.Experience.forEach(writeExperience);
         data.Education.forEach(writeEducation);
@@ -58,6 +58,7 @@ function writeExperience(experience)
     
    */
 
+            console.log(experience);
     var companies = Object.keys(experience[0]);
     console.log(companies);
 
