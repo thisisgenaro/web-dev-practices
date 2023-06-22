@@ -74,8 +74,10 @@ function writeExperience(experience)
     function displayData(company)
     {
         var companyExperience = experience[company];
+        /*
         console.log(company);
         console.log(companyExperience);
+        */
 
         var content = document.createElement('div');
         content.setAttribute('class','content');
@@ -113,6 +115,8 @@ function writeExperience(experience)
 
             content.appendChild(list);
 
+        console.log(content);
+
         return content
     
     }
@@ -129,9 +133,7 @@ function writeExperience(experience)
     var description = experience.description;
 
     */
-
-    console.log(companies.forEach(displayData));
-
+   
     HTMLOutput.appendChild(companies.forEach(displayData));
     document.getElementById("work-experience").appendChild(HTMLOutput);
 
