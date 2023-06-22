@@ -62,9 +62,19 @@ function writeExperience(experience)
     
    */
 
-    console.log(experience);
+    /*console.log(experience);*/
     var companies = Object.keys(experience);
-    console.log(companies);
+    /*console.log(companies);*/
+
+    function displayData(company)
+    {
+        var companyExperience = experience[company];
+        console.log(company);
+        console.log(companyExperience);
+
+    }
+
+    companies.forEach(displayData);
 
     var startdate = experience.startdate;
     var enddate = experience.enddate;
