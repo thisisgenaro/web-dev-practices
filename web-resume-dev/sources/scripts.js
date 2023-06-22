@@ -111,6 +111,8 @@ function writeExperience(experience)
 
             })
 
+            content.appendChild(list);
+
         return content
     
     }
