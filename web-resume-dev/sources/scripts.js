@@ -63,7 +63,7 @@ function writeExperience(experience)
    */
 
     console.log(experience);
-    var companies = Object.keys(experience[0]);
+    var companies = Object.keys(experience);
     console.log(companies);
 
     var startdate = experience.startdate;
