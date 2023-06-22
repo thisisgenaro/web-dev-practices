@@ -1,10 +1,9 @@
 var dataJson = "sources/main-data.json"
-var AllData
 
 function importJsonData()
 {
 
-    AllData = fetch(dataJson)
+    fetch(dataJson)
     .then(response => {
         return response.json();
     })
@@ -15,13 +14,14 @@ function importJsonData()
 
 function logJsonData(data)
 {   
-    return data;
-    console.log(data.Experience)
+    console.log(data.Experience);
+    /*
         data.Experience.forEach(writeExperience);
         data.Education.forEach(writeEducation);
         data.Skills.forEach(writeSkills);
         data.Personality.forEach(writeTreats);
         data.Social.forEach(writeSocial);
+    */
 }
 
 function writeExperience(experience)
