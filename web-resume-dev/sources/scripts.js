@@ -50,12 +50,14 @@ function writeExperience(experience)
                 <div class="content">
                     <h2>DPWorld Caucedo</h2><br>
                         <ul>
-                        <em>LEAD IT INFRASTRUCTURE ENGINEER</em><span class="timespan">2021 - Current</span><br>
-                        <p>Responsible for planning, managing and implementing IT Infrastructure resources and their usage through all the port and logistics solutions offered in the terminal, including networks, servers, high availability, site redundancy, UPS, cloud, and more.<p>
-                        </ul>
-                        <ul>
-                        <em>LEAD IT INFRASTRUCTURE ENGINEER</em><span class="timespan">2021 - Current</span><br>
-                        <p>Responsible for planning, managing and implementing IT Infrastructure resources and their usage through all the port and logistics solutions offered in the terminal, including networks, servers, high availability, site redundancy, UPS, cloud, and more.<p>
+                            <li>
+                                <em>LEAD IT INFRASTRUCTURE ENGINEER</em><span class="timespan">2021 - Current</span><br>
+                                <p>Responsible for planning, managing and implementing IT Infrastructure resources and their usage through all the port and logistics solutions offered in the terminal, including networks, servers, high availability, site redundancy, UPS, cloud, and more.<p>
+                            </li>
+                            <li>
+                            <em>LEAD IT INFRASTRUCTURE ENGINEER</em><span class="timespan">2021 - Current</span><br>
+                            <p>Responsible for planning, managing and implementing IT Infrastructure resources and their usage through all the port and logistics solutions offered in the terminal, including networks, servers, high availability, site redundancy, UPS, cloud, and more.<p>
+                            </li>
                         </ul>
                 </div>
             </li>
@@ -66,15 +68,56 @@ function writeExperience(experience)
     var companies = Object.keys(experience);
     /*console.log(companies);*/
 
+    var HTMLOutput = document.createElement('li');
+    HTMLOutput.classList.add('experience','item');
+
     function displayData(company)
     {
         var companyExperience = experience[company];
         console.log(company);
         console.log(companyExperience);
 
+        var content = document.createElement('div');
+        content.setAttribute('class','content');
+
+        var companyHTML = document.createElement('h2');
+        companyHTML.innerText = (company);
+        content.appendChild(companyHTML);
+        content.appendChild(document.createElement('br'));
+        var list = content.appendChild(document.createElement('ul'));
+
+        companyExperience.forEach(exp =>
+            {
+                var startdate = exp.startdate;
+                var enddate = exp.enddate;
+                var timespan = startdate + " - " + enddate
+                var role = exp.role;
+                var description = exp.description;
+
+                var companyListElement = document.createElement('li');
+
+                var roleHTML = document.createElement('em');
+                roleHTML.innerText = role;
+                companyListElement.appendChild(roleHTML);
+
+                var timespanHTML = document.createElement('span');
+                timespanHTML.innerText = timespan;
+                companyListElement.appendChild(timespanHTML);
+                companyListElement.appendChild(document.createElement('br'));
+                companyListElement.innerHTML += description;
+                companyListElement.appendChild(document.createElement('br'));
+
+                list.appendChild(companyListElement);
+
+            })
+
+        return content
+    
     }
 
     companies.forEach(displayData);
+
+    /*
 
     var startdate = experience.startdate;
     var enddate = experience.enddate;
@@ -83,28 +126,9 @@ function writeExperience(experience)
     var company = experience.company;
     var description = experience.description;
 
-    var HTMLOutput = document.createElement('li');
-    HTMLOutput.classList.add('experience','item');
+    */
 
-    var content = document.createElement('div');
-    content.setAttribute('class','content');
-
-    var roleHTML = document.createElement('h2');
-    roleHTML.innerText = role;
-    content.appendChild(roleHTML);
-    content.appendChild(document.createElement('br'));
-
-    var companyHTML = document.createElement('em');
-    companyHTML.innerText = (company + " / ");
-    content.appendChild(companyHTML);
-
-    var timespanHTML = document.createElement('span');
-    timespanHTML.innerText = timespan;
-    content.appendChild(timespanHTML);
-    content.appendChild(document.createElement('br'));
-    content.innerHTML += description;
-
-    HTMLOutput.appendChild(content);
+    HTMLOutput.appendChild(companies.forEach(displayData));
     document.getElementById("work-experience").appendChild(HTMLOutput);
 
 }
