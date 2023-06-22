@@ -62,7 +62,7 @@ function writeExperience(experience)
     
    */
 
-            console.log(experience);
+    console.log(experience);
     var companies = Object.keys(experience[0]);
     console.log(companies);
 
