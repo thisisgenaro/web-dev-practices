@@ -24,7 +24,7 @@ function logJsonData(data)
     data.Skills.forEach(writeSkills);
     data.Personality.forEach(writeTreats);
     data.Social.forEach(writeSocial);
-    
+
 }
 
 function writeExperience(experience)
@@ -87,7 +87,9 @@ function writeExperience(experience)
         var list = content.appendChild(document.createElement('ul'));
 
         companyExperience.forEach(addExperience);
+
         content.appendChild(list);
+
         console.log(content);
 
         HTMLOutput.appendChild(content);
@@ -96,7 +98,6 @@ function writeExperience(experience)
 
     function addExperience(exp)
     {
-        
         var startdate = exp.startdate;
         var enddate = exp.enddate;
         var timespan = startdate + " - " + enddate
