@@ -21,20 +21,13 @@ function getComputerChoice()
 
 function playerSelection()
 {
+    let player;
     do{
         player = prompt("Please Select Rock, Paper or Scissors").toLowerCase();
     }
     while(choice.indexOf(player) < 0);
 
     return choice.indexOf(player);
-
-/*
-    return choice.filter(
-        function(value,index,array){
-            return array[index].indexOf(value) === 0
-        }
-    );
-*/
 }
 
 class turn{
@@ -45,13 +38,13 @@ class turn{
     }
         
     check() {
-        if(this.player === this.computer)
+        if(this.player != this.computer)
         {
-            return "draw";
+            return (tips[this.player] === this.computer) ? "player":"computer";
         }
         else
         {
-            return (tips[this.player] === this.computer) ? "player":"computer";
+            return
         }
     }
 }
@@ -59,15 +52,35 @@ class turn{
 
 function game()
 {
-    const gameSet = []
-    for(let x = 0; x < 5; x++)
-    {
-        gameSet[x] = new turn();
-        console.log (gameSet[x]);
-        console.log("Result: " + gameSet[x].result);
+    const gameResult = {
+        player:0,
+        computer:0
     }
 
-    return gameSet;
+    let winner;
+
+    const gameSet = []
+    do
+    {
+        let nturn = new turn();
+        let result = nturn.result;
+
+        console.log(nturn);
+
+        if(result){
+            gameSet.push(nturn);
+            console.log("Result: " + result);
+            gameResult[result]++;
+        }
+
+        if(gameSet.length == 5)
+        {
+            winner = Object.keys(gameResult).reduce((d1,d2) => gameResult[d1] > gameResult[d2] ? d1 : d2);
+        }
+
+    }while(gameSet.length < 5);
+
+    return [winner,gameResult[winner]];
 }
 
 
