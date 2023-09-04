@@ -25,12 +25,13 @@ content.appendChild(redP);
 const blueH3 = document.createElement('h3');
 blueH3.textContent = "I'm a blue h3!";
 blueH3.style.color = "blue";
+content.appendChild(blueH3);
 
 const newDiv = document.createElement('div');
 const divH1 = document.createElement('h1');
 const divP = document.createElement('p');
 
-newDiv.style.cssText = "background:pink; border-style:solid;"
+newDiv.style.cssText = "background:pink; border-style:solid;";
 
 divH1.textContent = "I'm in a div";
 divP.textContent = "ME TOO!";
