@@ -82,8 +82,20 @@ class round{
     end()
     {
             this.ended = true;
+
+            this.winner = Object.keys(this.Score).reduce((d1,d2) => this.Score[d1] > this.Score[d2] ? d1 : d2);
+
             let winnerBoard = document.getElementById("result");
-            let winnerBanner
+            let winnerBanner = document.createElement("div");
+            let wBTitle = document.createElement("h2");
+            let wBData = document.createElement("h3");
+
+            wBData.innerText = "Winner: "+ this.winner;
+            wBTitle.innerText = "GAME OVER"
+            winnerBanner.appendChild(wBTitle);
+            winnerBanner.appendChild(wBData);
+            winnerBoard.innerHTML = winnerBanner.innerHTML;
+   
     }
 }
 
