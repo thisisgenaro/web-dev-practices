@@ -6,7 +6,7 @@
 5. game() function that goes for up - to 5 rounds.
 */
 
-let choice = ["rock","paper","scissors"]
+let choice = ["rock","paper","scissors"];
 
 let tips = {
     rock:"scissors",
@@ -14,30 +14,18 @@ let tips = {
     scissors:"paper"
 };
 
-function getComputerChoice()
-{
-    return Math.floor(Math.random() * 3);
-}
-
-function playerSelection()
-{
-    let player;
-    do{
-        player = prompt("Please Select Rock, Paper or Scissors").toLowerCase();
-    }
-    while(choice.indexOf(player) < 0);
-
-    return choice.indexOf(player);
-}
-
 class turn{
-    constructor(){
-        this.computer=choice[getComputerChoice()];
-        this.player=choice[playerSelection()];
-        this.result = this.check();
+    constructor(playerChoice){
+        this.computer=choice[this.getComputerChoice()];
+        this.player=choice[playerChoice];
+        this.result = this.run();
+    }
+
+    getComputerChoice(){
+        return Math.floor(Math.random() * 3);
     }
         
-    check() {
+    run() {
         if(this.player != this.computer)
         {
             return (tips[this.player] === this.computer) ? "player":"computer";
@@ -49,6 +37,59 @@ class turn{
     }
 }
 
+class round{
+    constructor(){
+        this.Set = []
+        this.Score = {
+            player:0,
+            computer:0
+        }
+    }
+
+    update(nturn)
+    {
+        if(this.ended == true)return;
+
+        this.Set.push(nturn);
+         
+        if(nturn.result)
+        {
+            this.Score[nturn.result]++;
+        }
+
+        let playerChoice = document.getElementById("playerChoice");
+        let computerChoice = document.getElementById("computerChoice");
+        let turnResult = document.getElementById("turnResult");
+        let playerScore = document.getElementById("playerScore");
+        let computerScore = document.getElementById("computerScore");
+
+        console.log("Player: "+nturn.player);
+        console.log("Computer: "+nturn.computer);
+        console.log("result: "+nturn.result);
+
+        playerChoice.innerText = nturn.player;
+        computerChoice.innerText = nturn.computer;
+        turnResult.innerText = nturn.result ? nturn.result : "draw";
+        playerScore.innerText = this.Score.player;
+        computerScore.innerText = this.Score.computer;
+
+        if(this.Score.player == 3 || this.Score.computer == 3)
+        {
+            this.end();
+        }
+    }
+
+    end()
+    {
+            this.ended = true;
+            let winnerBoard = document.getElementById("result");
+            let winnerBanner
+    }
+}
+
+let game = new round()
+
+/*
 
 function game()
 {
@@ -57,9 +98,14 @@ function game()
         computer:0
     }
 
-    let winner;
+    const gameStats = {
+        winner:null,
+        turnResult:null,
+        gameSet:[]
+    }
 
     const gameSet = []
+
     do
     {
         let nturn = new turn();
@@ -69,19 +115,23 @@ function game()
 
         if(result){
             gameSet.push(nturn);
-            console.log("Result: " + result);
             gameResult[result]++;
         }
 
-        if(gameSet.length == 5)
+        gameStats.turnResult = result ? result : "draw";
+
+        console.log(turnResult);
+
+        if(gameResult.player == 3 || gameResult.computer == 3)
         {
-            winner = Object.keys(gameResult).reduce((d1,d2) => gameResult[d1] > gameResult[d2] ? d1 : d2);
+            gameStats.winner = Object.keys(gameResult).reduce((d1,d2) => gameResult[d1] > gameResult[d2] ? d1 : d2);
         }
 
-    }while(gameSet.length < 5);
+    }while(!gameStats.winner);
 
-    return [winner,gameResult[winner]];
+    return gameStats.winner;
 }
+*/
 
 
 /*

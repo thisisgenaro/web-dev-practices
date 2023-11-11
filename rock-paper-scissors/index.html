@@ -7,6 +7,49 @@
     <script src="scripts.js"></script>
 </head>
 <body>
-    
+    <div id="container">
+        <header>
+            <h1>ROCK PAPER SCISSORS</h1>
+            <p>Beat the game</p>
+        </header>
+
+        <div id="board">
+            <h2>MAKE YOUR CHOICE</h2>
+            <img id="img-rock" src="./img/rock.png" alt="rock" onclick="game.update(new turn(0));">
+            <img id="img-paper" src="./img/paper.png" alt="paper" onclick="game.update(new turn(1));">
+            <img id="img-scissors" src="./img/scissors.png" alt="scissors" onclick="game.update(new turn(2));">
+        </div>
+
+        <div id="status">
+            <div id="lastPick">
+                <div class="Player Choice">
+                    <h3>Your Choice</h3>
+                    <h4 id="playerChoice"></h4>
+                </div>
+                <div class="Choice Result">
+                    <h3>Turn Result</h3>
+                    <h4 id="turnResult"></h4>
+                </div>
+                <div class="Computer Choice">
+                    <h3>PC</h3>
+                    <h4 id="computerChoice"></h4>
+                </div>
+            </div>
+            <div id="scoreboard">
+                <div class="Player Score">
+                    <h3>Player</h3>
+                    <h4 id="playerScore"></h4>
+                </div>
+                <div class="Computer Score">
+                    <h3>Computer</h3>
+                    <h4 id="computerScore"></h4>
+                </div>               
+            </div>
+        </div>
+
+        <div id="result">
+
+        </div>
+    </div>
 </body>
 </html>
