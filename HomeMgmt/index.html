@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="roku.js"></script>
+    <link rel="stylesheet" href="./roku.css">
+</head>
+<body>
+    <div class="roku controller">
+        <button class="roku button sole" id="roku-PowerOn" onclick="poweron()">ON</button>
+        <button class="roku button big" id="roku-Home" onclick="tvControl('Home')">HOME</button>
+        <button class="roku button big" id="roku-Back" onclick="tvControl('Back')">BACK</button>
+        <button class="roku button sole" id="roku-Up" onclick="tvControl('Up')">▲</button>
+        <button class="roku button" id="roku-Left" onclick="tvControl('Left')">◀</button>
+        <button class="roku button" id="roku-Select" onclick="tvControl('Select')">OK</button>
+        <button class="roku button" id="roku-Right" onclick="tvControl('Right')">▶</button>
+        <button class="roku button sole" id="roku-Down" onclick="tvControl('Down')">▼</button>
+        <button class="roku button big" id="roku-InstantReplay" onclick="tvControl('InstantReplay')">REPLAY</button>
+        <button class="roku button big" id="roku-Info" onclick="tvControl('Info')">INFO</button>
+        <button class="roku button" id="roku-Rev" onclick="tvControl('Rev')">◀◀</button>
+        <button class="roku button" id="roku-Play" onclick="tvControl('Play')">▶❚❚</button>
+        <button class="roku button" id="roku-Fwd" onclick="tvControl('Fwd')">▶▶</button>
+        <form id="roku-Text" onkeydown="tvControlText(event)">
+            <label for="rokuTextInput">Search</label>
+            <input type="text" id="rokuTextInput" name="rokuTextInput">
+        </form>
+    </div>
+    <br>
+    <div style="width: 300px; margin: auto;">
+        <form>
+            <label for="rokuControllerID">Roku Device IP</label>
+            <input type="text" id="rokuControllerID" name="rokuControllerID" oninput="setDeviceId()">
+        </form>
+        <br>
+        <h3>Your Device:</h3>
+        <p id="deviceID"></p>
+    </div>
+    
+</body>
+</html>

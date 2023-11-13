@@ -1,0 +1,41 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.roku.controller{
+    width: 240px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    margin: auto;
+    border-radius: 20px;
+    border-color: black;
+    border-style: solid;
+    background-color: #dddddd;
+}
+
+.roku.button{
+    background-color: blueviolet;
+    width: 50px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    margin: 10px 10px;
+    color: white;
+    font-weight: 600;
+}
+
+.roku.big{
+    width: 80px;
+}
+
+.roku.sole{
+    margin: 10px 95px 
+}
+
+#roku-Text{
+    width: 200px;
+}
+
