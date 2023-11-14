@@ -5,16 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock - Paper - Scissors</title>
     <script src="scripts.js"></script>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div id="container">
         <header>
             <h1>ROCK PAPER SCISSORS</h1>
-            <p>Beat the game</p>
+            <h4>Beat the game</h4>
         </header>
+        
+        <div id="scoreboard">
+            <div class="Player Score">
+                <h3>Player</h3>
+                <h3 id="playerScore">0</h3>
+            </div>
+            <div class="Computer Score">
+                <h3>Computer</h3>
+                <h3 id="computerScore">0</h3>
+            </div>               
+        </div>
 
+        <div>
+            <h2 id="call-to-action">MAKE YOUR CHOICE</h2>
+        </div>
+    
         <div id="board">
-            <h2>MAKE YOUR CHOICE</h2>
             <img id="img-rock" src="./img/rock.png" alt="rock" onclick="game.update(new turn(0));">
             <img id="img-paper" src="./img/paper.png" alt="paper" onclick="game.update(new turn(1));">
             <img id="img-scissors" src="./img/scissors.png" alt="scissors" onclick="game.update(new turn(2));">
@@ -24,26 +39,16 @@
             <div id="lastPick">
                 <div class="Player Choice">
                     <h3>Your Choice</h3>
-                    <h4 id="playerChoice"></h4>
+                    <h4 id="playerChoice" class="ChoiceData"></h4>
                 </div>
                 <div class="Choice Result">
                     <h3>Turn Result</h3>
-                    <h4 id="turnResult"></h4>
+                    <h4 id="turnResult" class="ChoiceData"></h4>
                 </div>
                 <div class="Computer Choice">
                     <h3>PC</h3>
-                    <h4 id="computerChoice"></h4>
+                    <h4 id="computerChoice" class="ChoiceData"></h4>
                 </div>
-            </div>
-            <div id="scoreboard">
-                <div class="Player Score">
-                    <h3>Player</h3>
-                    <h4 id="playerScore"></h4>
-                </div>
-                <div class="Computer Score">
-                    <h3>Computer</h3>
-                    <h4 id="computerScore"></h4>
-                </div>               
             </div>
         </div>
 
@@ -51,7 +56,7 @@
 
         </div>
         <div>
-            <button onclick="location.reload();">START OVER</button>
+            <button id="resetButton" onclick="location.reload();">START OVER</button>
         </div>
     </div>
 </body>
